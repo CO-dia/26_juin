@@ -16,7 +16,6 @@ function Visu1() {
 
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
-  const colorCycleRef = useRef(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,18 +53,18 @@ function Visu1() {
       <Webcam
         ref={webcamRef}
         audio={false}
-        width={4}
-        height={4}
+        width={1}
+        height={1}
         screenshotFormat="image/png"
         videoConstraints={videoConstraints}
       />
       <canvas
         ref={canvasRef}
-        width={640}
-        height={480}
         style={{
-          filter: "blur(6px) contrast(1.7) saturate(2.5)",
+          filter: "blur(15px) contrast(1.7) saturate(2.5)",
           borderRadius: "12px",
+          width: "100vw",
+          height: "100vh",
         }}
       />
     </div>
